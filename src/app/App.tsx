@@ -13,6 +13,7 @@ import {
   Clock,
   MapPin,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import mixBarLogo from "../imports/Marca_dgua_3.png";
@@ -28,7 +29,6 @@ export default function App() {
     "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1600&h=900&fit=crop", // Drinks coloridos
     "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1600&h=900&fit=crop", // Bartender preparando drink
     "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1600&h=900&fit=crop", // Festa/evento
-    "https://images.unsplash.com/photo-1560426351-ab681f93d897?w=1600&h=900&fit=crop", // Coquetel elegante
   ];
 
   useEffect(() => {
@@ -51,7 +51,8 @@ export default function App() {
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#20BA5A] hover:scale-110 transition-all duration-300 group"
         aria-label="Falar no WhatsApp"
       >
-        <MessageCircle className="w-8 h-8" />
+        <FaWhatsapp className="w-8 h-8" />
+
         <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-[#2B2B2B] text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           Fale conosco no WhatsApp
         </span>
@@ -169,7 +170,7 @@ export default function App() {
       <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* IMAGENS DE FUNDO DO TOPO/HERO */}
         <div className="absolute inset-0 z-0">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="sync">
             <motion.div
               key={currentImageIndex}
               initial={{ opacity: 0 }}
@@ -202,15 +203,6 @@ export default function App() {
               />
             ))}
           </div>
-        </div>
-
-        {/* LOGO/MARCA - DESKTOP (DIREITA) */}
-        <div className="absolute top-8 right-8 z-10 hidden lg:block">
-          <img
-            src={mixBarLogo}
-            alt="Mix Bar Logo"
-            className="w-64 opacity-25 hover:opacity-35 transition-opacity drop-shadow-lg"
-          />
         </div>
 
         {/* Logo/Marca - Mobile (centro, menor) */}
